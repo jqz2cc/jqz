@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>react</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+</html>
+<script type="text/babel">
+   function Welcom(props) {
+     return <div>
+       <h1>Hello ,{props.name}</h1>
+         <h2>My age {props.age}</h2>
+     </div>
+   }
+   const element = <Welcom name="Sara" age="24" />;
+   ReactDOM.render(
+     element,
+     document.getElementById('root')
+   )
+</script>
