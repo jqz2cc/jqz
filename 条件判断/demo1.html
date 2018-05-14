@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<div id="root"></div>
+</body>
+</html>
+<script type="text/babel">
+    const style={
+        color:'pink',
+        fontSize:'20px',
+        border:'1px #595959 solid',
+    };
+    function Hello(){
+        function handleClick(e) {
+            e.preventDefault();
+            console.log("The link was Clicked");
+        }
+        return <button onClick={handleClick}>Hello</button>
+    }
+    function ActionLink() {
+        function handleClick(e) {
+            e.preventDefault();
+            console.log('The link was clicked.');
+        }
+        return (
+            <a href="#" onClick={handleClick}>
+                Click me
+            </a>
+        );
+    }
+    const element = <ActionLink/>;
+    const element1 = <Hello/>;
+   ReactDOM.render(
+       element,
+       document.getElementById('app')
+   );
+    ReactDOM.render(
+        element1,
+        document.getElementById('root')
+    )
+</script>

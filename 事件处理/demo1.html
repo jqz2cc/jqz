@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+</html>
+<script type="text/babel">
+    //定义一个类组件
+    class Toggle extends React.Component{
+    //    构造函数
+        constructor(props){
+            super(props);
+            this.state = {isToggle: true};
+            this.handleClick = this.handleClick.bind(this);
+        }
+    //    注册事件
+        handleClick(){
+            this.setState(prevState => ({
+                isToggle:!prevState.isToggle
+                })
+            )
+        }
+        //组件内容
+        render(){
+            return (
+                <button onClick={this.handleClick}>
+                    {this.state.isToggle?'ON':'OFF'}
+                </button>
+            )
+        }
+    }
+    ReactDOM.render(
+        <Toggle/>,
+        document.getElementById('root')
+    )
+</script>
