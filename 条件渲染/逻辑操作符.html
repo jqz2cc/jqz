@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+</html>
+<script type="text/babel">
+    function MailBox(props) {
+        const unreadMessage = props.unreadMessage;
+        return(
+            <div>
+                <h1>Hello!</h1>
+                {unreadMessage.length > 0 &&
+                <h2>
+                    You have {unreadMessage.length} unread messages.
+                </h2>
+                }
+            </div>
+        )
+    }
+    const message=['React','hello','cheng','hahah'];
+    ReactDOM.render(
+        <MailBox unreadMessage={message}/>,
+        document.getElementById('app')
+    )
+</script>

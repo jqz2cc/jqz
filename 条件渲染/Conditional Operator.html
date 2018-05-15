@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+</html>
+<script type="text/babel">
+    class Test extends React.Component{
+        render(){
+            return(
+                <div>
+                    The user is <b>{this.props.isLoggedIn? 'jack':'not'} </b>logged in.
+                </div>
+            )
+        }
+    }
+    const element = <Test isLoggedIn={true}/>;
+    ReactDOM.render(
+        element,
+        document.getElementById('app')
+    );
+
+</script>

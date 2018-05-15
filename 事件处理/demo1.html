@@ -9,6 +9,7 @@
 </head>
 <body>
 <div id="root"></div>
+<div id="app"></div>
 </body>
 </html>
 <script type="text/babel">
@@ -39,5 +40,25 @@
     ReactDOM.render(
         <Toggle/>,
         document.getElementById('root')
+    );
+
+//    回调中使用箭头符号
+    class LoggingButton extends React.Component{
+        handleClick(){
+            console.log('this is',this);
+        }
+        render(){
+            return (
+                <button onClick={(e)=>{
+                    this.handleClick(e)
+                }}>
+                    Click me
+                </button>
+            )
+        }
+    }
+    ReactDOM.render(
+        <LoggingButton/>,
+        document.getElementById('app')
     )
 </script>
