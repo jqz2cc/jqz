@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+</html>
+<script type="text/babel">
+    function Blog(props) {
+        const sidebar = (
+            <ul>
+                {props.post.map((post)=>
+                    <li key={post.id}>
+                        <h1>{post.title}</h1>
+                        <p>{post.content}</p>
+                    </li>
+                )}
+            </ul>
+        );
+        const list = props.post.map((post)=>
+         <div key={post.id}>
+             <h3>{post.title}</h3>
+             <p>{post.content}</p>
+         </div>
+        );
+        return (
+            <div>
+                {sidebar}
+                <hr/>
+                {list}
+            </div>
+        )
+    }
+
+    const posts = [
+        {
+            id:1,
+            title:'Hello World',
+            content:'nihao uwfuerbfe',
+        },
+        {
+            id:2,
+            title:'Hello 哈哈哈哈',
+            content:'nihao 吃点吧我好烦',
+        },
+    ];
+    ReactDOM.render(
+        <Blog post={posts}/>,
+        document.getElementById('app')
+    )
+</script>
