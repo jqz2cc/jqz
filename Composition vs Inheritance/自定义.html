@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+</html>
+<script type="text/babel">
+    function SplitPane(props) {
+        return(
+            <div className="split-pane">
+                <div className="split-left">
+                    {props.left}
+                </div>
+                <div className="split-right">
+                    {props.right}
+                </div>
+            </div>
+        )
+    }
+    function Left(props) {
+        return(
+            <h1>Welcome to China!</h1>
+        )
+    }
+    function Right(props) {
+        return(
+            <p>
+                China is a multi-ethnic country based on Chinese civilization as its source and Chinese culture, and has the Han nationality as the main ethnic group. The general Chinese, the Chinese characters, the Han nationality and the ethnic minorities are collectively referred to as the "Chinese nation," and they claim to be the descendants of the Yellow Emperor and the Dragon. successor.
+            </p>
+        )
+    }
+    function App() {
+        return (
+            <SplitPane
+                left={
+                <Left/>
+            }
+            right = {
+               <Right/>
+
+             }/>
+        )
+    }
+    ReactDOM.render(
+        <App/>,
+        document.getElementById('app')
+    )
+</script>

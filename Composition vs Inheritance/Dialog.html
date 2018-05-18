@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+</html>
+<script type="text/babel">
+    function FancyBorder (props) {
+        return (
+            <div className="FancyBorder">
+                {props.children}
+            </div>
+        )
+    }
+    function Dialog(props) {
+        return (
+         <FancyBorder>
+             <h1 className="dialog-title">{props.title}</h1>
+             <p className="dialog-content">{props.content}</p>
+         </FancyBorder>
+        )
+    }
+
+    function WelcomDialog() {
+        return (
+            <Dialog title="China"
+                    content=' China is a multi-ethnic country based on Chinese civilization as its source and Chinese culture, and has the Han nationality as the main ethnic group. The general Chinese, the Chinese characters, the Han nationality and the ethnic minorities are collectively referred to as the "Chinese nation," and they claim to be the descendants of the Yellow Emperor and the Dragon. successor.'/>
+        )
+    }
+
+    ReactDOM.render(
+        <WelcomDialog/>,
+        document.getElementById('app')
+    )
+</script>
